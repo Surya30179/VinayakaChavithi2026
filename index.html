@@ -37,23 +37,14 @@
             overflow-x: hidden;
         }
 
-        body:before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-            background:
-                linear-gradient(180deg, rgba(10, 5, 3, .32), rgba(10, 5, 3, .9)),
-                url("ganesha-bg.png") center/cover fixed no-repeat;
-        }
-
+        /* Desktop page atmosphere */
         body:after {
             content: "";
             position: fixed;
             inset: 0;
-            z-index: -1;
+            z-index: 10;
             pointer-events: none;
-            background: radial-gradient(circle at 50% 18%, rgba(246, 200, 95, .12), transparent 35%);
+            background: radial-gradient(circle at 50% 18%, rgba(246, 200, 95, .10), transparent 35%);
         }
 
         /* NAV */
@@ -104,6 +95,19 @@
             place-items: center;
             text-align: center;
             padding: 120px 20px 80px;
+            position: relative;
+            isolation: isolate;
+            background:
+                linear-gradient(180deg, rgba(10, 5, 3, .28), rgba(10, 5, 3, .82)),
+                url("ganesha-bg.png") center center / cover no-repeat;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(circle at 55% 35%, rgba(246, 200, 95, .12), transparent 38%);
         }
 
         .hero-inner {
@@ -428,18 +432,23 @@
             .sponsors {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .hero h1 {
                 font-size: 60px;
             }
+
             .hero p {
                 font-size: 20px;
             }
+
             .section-title h2 {
                 font-size: 36px;
             }
+
             .total-box strong {
                 font-size: 42px;
             }
+
             main {
                 padding: 50px 20px;
             }
@@ -448,76 +457,107 @@
         /* MOBILE (max-width: 600px) */
         @media (max-width: 600px) {
             body {
-                background-attachment: scroll;
-                background-position: top center;
+                background: #120907;
             }
+
             .hero {
-                min-height: 60vh;
-                padding: 40px 20px;
+                min-height: 100svh;
+                padding: 100px 20px 55px;
+                background:
+                    linear-gradient(180deg, rgba(8, 4, 2, .22) 0%, rgba(8, 4, 2, .38) 42%, rgba(8, 4, 2, .88) 100%),
+                    url("ganesha-bg.png") 68% center / cover no-repeat;
             }
+
             .hero-content {
                 padding: 25px;
             }
+
             .hero-content .om {
                 font-size: 45px;
                 margin-bottom: 10px;
             }
+
             .hero h1 {
                 font-size: 36px;
             }
+
             .hero p {
                 font-size: 16px;
             }
+
             .section-title {
                 padding: 15px 20px;
                 margin-bottom: 40px;
             }
+
             .section-title h2 {
                 font-size: 28px;
             }
+
             .section-title p {
                 font-size: 16px;
             }
-            .sponsors, .donors {
+
+            .sponsors,
+            .donors {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
+
             .sponsor-card {
                 padding: 25px 15px;
             }
+
             .donor {
                 flex-direction: row;
                 text-align: left;
                 padding: 15px;
                 gap: 10px;
             }
+
             .donor-name {
                 font-size: 16px;
             }
+
             .donor-amount {
                 font-size: 17px;
             }
+
             .total-box {
                 padding: 30px 15px;
             }
+
             .total-box strong {
                 font-size: 36px;
             }
+
             .thank-you {
                 padding: 40px 20px;
                 margin-top: 60px;
             }
+
             .thank-you h2 {
                 font-size: 28px;
             }
+
             .thank-you p {
                 font-size: 16px;
             }
+
             footer {
                 padding: 30px 15px;
             }
+
             footer h3 {
                 font-size: 22px;
+            }
+        }
+
+        /* VERY SMALL PHONES */
+        @media (max-width: 400px) {
+            .hero {
+                min-height: 100svh;
+                background-position: 70% center;
             }
         }
 
@@ -526,9 +566,11 @@
             .hero h1 {
                 font-size: 30px;
             }
+
             .sponsor-card h3 {
                 font-size: 18px;
             }
+
             .sponsor-card .name {
                 font-size: 20px;
             }
