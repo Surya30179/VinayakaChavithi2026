@@ -447,6 +447,10 @@
 
         /* MOBILE (max-width: 600px) */
         @media (max-width: 600px) {
+            body {
+                background-attachment: scroll;
+                background-position: top center;
+            }
             .hero {
                 min-height: 60vh;
                 padding: 40px 20px;
@@ -482,13 +486,16 @@
                 padding: 25px 15px;
             }
             .donor {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
+                flex-direction: row;
+                text-align: left;
                 padding: 15px;
+                gap: 10px;
+            }
+            .donor-name {
+                font-size: 16px;
             }
             .donor-amount {
-                font-size: 18px;
+                font-size: 17px;
             }
             .total-box {
                 padding: 30px 15px;
